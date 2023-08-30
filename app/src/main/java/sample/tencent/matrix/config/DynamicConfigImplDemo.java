@@ -21,6 +21,8 @@
 
 package sample.tencent.matrix.config;
 
+import static sample.tencent.matrix.MatrixApplication.IS_TRACE_ENABLE;
+
 import android.util.Log;
 
 import com.tencent.matrix.util.MatrixLog;
@@ -40,7 +42,7 @@ public class DynamicConfigImplDemo implements IDynamicConfig {
     }
 
     public boolean isTraceEnable() {
-        return true;
+        return IS_TRACE_ENABLE;
     }
 
     public boolean isSignalAnrTraceEnable() {

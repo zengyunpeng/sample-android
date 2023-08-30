@@ -1,2 +1,3 @@
 include ':app'
 include ':libkt'
+//include ':matrix-trace-canary'

@@ -115,8 +115,9 @@ public class TestTraceMainActivity extends Activity implements IAppForeground {
 
 
     public void testEnter(View view) {
-        Intent intent = new Intent(this, TestEnterActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, TestEnterActivity.class);
+//        startActivity(intent);
+        evilMethod5(true);
     }
 
     public void testFps(View view) {

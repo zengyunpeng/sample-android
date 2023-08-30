@@ -34,13 +34,13 @@ import com.tencent.matrix.iocanary.config.IOConfig;
 import com.tencent.matrix.lifecycle.LifecycleThreadConfig;
 import com.tencent.matrix.lifecycle.MatrixLifecycleConfig;
 import com.tencent.matrix.lifecycle.supervisor.SupervisorConfig;
-import com.tencent.matrix.memory.canary.MemoryCanaryPlugin;
 import com.tencent.matrix.memory.canary.trim.TrimCallback;
 import com.tencent.matrix.memory.canary.trim.TrimMemoryNotifier;
 import com.tencent.matrix.resource.ResourcePlugin;
 import com.tencent.matrix.resource.config.ResourceConfig;
 import com.tencent.matrix.trace.TracePlugin;
 import com.tencent.matrix.trace.config.TraceConfig;
+import com.tencent.matrix.trace.tracer.EvilMethodTracer;
 import com.tencent.matrix.trace.tracer.SignalAnrTracer;
 import com.tencent.matrix.util.MatrixLog;
 import com.tencent.sqlitelint.SQLiteLint;
@@ -48,15 +48,13 @@ import com.tencent.sqlitelint.SQLiteLintPlugin;
 import com.tencent.sqlitelint.config.SQLiteLintConfig;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Map;
 
 import sample.tencent.matrix.battery.BatteryCanaryInitHelper;
-import sample.tencent.matrix.battery.BatteryCanarySimpleInitHelper;
 import sample.tencent.matrix.config.DynamicConfigImplDemo;
 import sample.tencent.matrix.kt.lifecycle.MatrixLifecycleLogger;
-import sample.tencent.matrix.kt.memory.canary.MemoryCanaryBoot;
-import sample.tencent.matrix.lifecycle.LifecycleTest;
 import sample.tencent.matrix.listener.TestPluginListener;
 import sample.tencent.matrix.resource.ManualDumpActivity;
 
@@ -160,6 +158,25 @@ public class MatrixApplication extends Application {
         });
 
         MatrixLog.i(TAG, "Matrix configurations done.");
+
+        //反射替换tracePlugin中的EvilMethodTracker类解决打印不出栈日志的问题
+        try {
+            Log.i("Zyp", "反射替换EvilMethodTracker");
+            Field evilMethodTracer = tracePlugin.getClass().getDeclaredField("evilMethodTracer");
+            evilMethodTracer.setAccessible(true);
+
+            EvilMethodTracer evilMethodTracer1 = tracePlugin.getEvilMethodTracer();
+            Field configF = evilMethodTracer1.getClass().getDeclaredField("config");
+            configF.setAccessible(true);
+            TraceConfig config = (TraceConfig)configF.get(evilMethodTracer1);
+            evilMethodTracer.set(tracePlugin,new MyEvilMethodTracker(config));
+            Log.i("Zyp", "反射替换EvilMethodTracker 成功 ");
+            Log.i("Zyp", "tracePlugin: "+tracePlugin.getEvilMethodTracer());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private TracePlugin configureTracePlugin(DynamicConfigImplDemo dynamicConfig) {
@@ -198,6 +215,9 @@ public class MatrixApplication extends Application {
 
         return new TracePlugin(traceConfig);
     }
+
+    public static final boolean IS_TRACE_ENABLE = true;
+
 
     private void useSignalAnrTraceAlone(String anrFilePath, String printTraceFile) {
         SignalAnrTracer signalAnrTracer = new SignalAnrTracer(this, anrFilePath, printTraceFile);
