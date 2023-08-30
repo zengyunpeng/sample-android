@@ -115,28 +115,28 @@ public class MatrixApplication extends Application {
         // Reporter. Matrix will callback this listener when found issue then emitting it.
         builder.pluginListener(new TestPluginListener(this));
 
-        MemoryCanaryPlugin memoryCanaryPlugin = new MemoryCanaryPlugin(MemoryCanaryBoot.configure(this));
-        builder.plugin(memoryCanaryPlugin);
+//        MemoryCanaryPlugin memoryCanaryPlugin = new MemoryCanaryPlugin(MemoryCanaryBoot.configure(this));
+//        builder.plugin(memoryCanaryPlugin);
 
         // Configure trace canary.
         TracePlugin tracePlugin = configureTracePlugin(dynamicConfig);
         builder.plugin(tracePlugin);
 
         // Configure resource canary.
-        ResourcePlugin resourcePlugin = configureResourcePlugin(dynamicConfig);
-        builder.plugin(resourcePlugin);
+//        ResourcePlugin resourcePlugin = configureResourcePlugin(dynamicConfig);
+//        builder.plugin(resourcePlugin);
 
         // Configure io canary.
-        IOCanaryPlugin ioCanaryPlugin = configureIOCanaryPlugin(dynamicConfig);
-        builder.plugin(ioCanaryPlugin);
+//        IOCanaryPlugin ioCanaryPlugin = configureIOCanaryPlugin(dynamicConfig);
+//        builder.plugin(ioCanaryPlugin);
 
         // Configure SQLite lint plugin.
-        SQLiteLintPlugin sqLiteLintPlugin = configureSQLiteLintPlugin();
-        builder.plugin(sqLiteLintPlugin);
+//        SQLiteLintPlugin sqLiteLintPlugin = configureSQLiteLintPlugin();
+//        builder.plugin(sqLiteLintPlugin);
 
         // Configure battery canary.
-        BatteryMonitorPlugin batteryMonitorPlugin = configureBatteryCanary(this);
-        builder.plugin(batteryMonitorPlugin);
+//        BatteryMonitorPlugin batteryMonitorPlugin = configureBatteryCanary(this);
+//        builder.plugin(batteryMonitorPlugin);
 
         builder.matrixLifecycleConfig(configureMatrixLifecycle());
         Matrix.init(builder.build());
