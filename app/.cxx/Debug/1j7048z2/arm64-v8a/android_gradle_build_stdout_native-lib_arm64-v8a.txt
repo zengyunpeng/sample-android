@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/allsaints/Desktop/allsaints/WorkSpace/matrix-master/samples/sample-android/app/.cxx/Debug/1j7048z2/arm64-v8a'
+[1/1] Linking CXX shared library ../../../../build/intermediates/cxx/Debug/1j7048z2/obj/arm64-v8a/libnative-lib.so

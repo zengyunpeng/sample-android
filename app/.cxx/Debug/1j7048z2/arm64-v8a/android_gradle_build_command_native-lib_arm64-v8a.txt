@@ -1,0 +1,7 @@
+Executable : /Users/allsaints/Library/Work/anzhuang/Android/sdk/cmake/3.18.1/bin/ninja
+arguments : 
+-C
+/Users/allsaints/Desktop/allsaints/WorkSpace/matrix-master/samples/sample-android/app/.cxx/Debug/1j7048z2/arm64-v8a
+native-lib
+jvmArgs : 
+

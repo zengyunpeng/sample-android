@@ -1,0 +1,3 @@
+/Users/allsaints/Desktop/allsaints/WorkSpace/matrix-master/samples/sample-android/app/.cxx/Debug/1j7048z2/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/allsaints/Desktop/allsaints/WorkSpace/matrix-master/samples/sample-android/app/.cxx/Debug/1j7048z2/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/allsaints/Desktop/allsaints/WorkSpace/matrix-master/samples/sample-android/app/.cxx/Debug/1j7048z2/arm64-v8a/CMakeFiles/native-lib.dir

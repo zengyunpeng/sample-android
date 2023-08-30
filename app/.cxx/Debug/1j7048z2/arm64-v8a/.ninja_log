@@ -1,0 +1,27 @@
+# ninja log v5
+5	446	1693374378	CMakeFiles/native-lib.dir/src/main/jni/benchmark/benchmark.cpp.o	625469f774a42b9c
+3	447	1693374378	CMakeFiles/native-lib.dir/src/main/jni/benchmark/MemoryConcurrentAlloc.cpp.o	d763d36dfcc8c1b
+4	447	1693374378	CMakeFiles/native-lib.dir/src/main/jni/benchmark/MemorySingleThread.cpp.o	93296824f73b5fac
+8	447	1693374378	CMakeFiles/native-lib.dir/src/main/jni/benchmark/timer.cpp.o	f24bdacc50107c63
+3	447	1693374378	CMakeFiles/native-lib.dir/src/main/jni/benchmark/MemoryBenchmarkTest.cpp.o	5e0c89364f44606d
+8	449	1693374378	CMakeFiles/native-lib.dir/src/main/jni/benchmark/thread.cpp.o	43a37028e6dfbbb1
+4	450	1693374378	CMakeFiles/native-lib.dir/src/main/jni/benchmark/MemoryCrossThread.cpp.o	5d4e1d02d3d65e43
+1	464	1693374378	CMakeFiles/native-lib.dir/src/main/jni/MallocTest.cpp.o	71fa0c2a289f2915
+3	493	1693374378	CMakeFiles/native-lib.dir/src/main/jni/benchmark/BenchMarkMain.cpp.o	9db38946dc50317b
+2	768	1693374379	CMakeFiles/native-lib.dir/src/main/jni/MemObj.cpp.o	ee6ffcc7f75ea608
+768	865	1693374379	../../../../build/intermediates/cxx/Debug/1j7048z2/obj/arm64-v8a/libnative-lib.so	a22242005027776
+1	25	0	clean	d10f410f56a1240f
+18	485	1693378540	CMakeFiles/native-lib.dir/src/main/jni/benchmark/timer.cpp.o	f24bdacc50107c63
+9	486	1693378540	CMakeFiles/native-lib.dir/src/main/jni/benchmark/MemoryBenchmarkTest.cpp.o	5e0c89364f44606d
+14	487	1693378540	CMakeFiles/native-lib.dir/src/main/jni/benchmark/benchmark.cpp.o	625469f774a42b9c
+10	487	1693378540	CMakeFiles/native-lib.dir/src/main/jni/benchmark/MemoryConcurrentAlloc.cpp.o	d763d36dfcc8c1b
+13	487	1693378540	CMakeFiles/native-lib.dir/src/main/jni/benchmark/MemorySingleThread.cpp.o	93296824f73b5fac
+16	492	1693378540	CMakeFiles/native-lib.dir/src/main/jni/benchmark/thread.cpp.o	43a37028e6dfbbb1
+13	494	1693378540	CMakeFiles/native-lib.dir/src/main/jni/benchmark/MemoryCrossThread.cpp.o	5d4e1d02d3d65e43
+8	498	1693378540	CMakeFiles/native-lib.dir/src/main/jni/MallocTest.cpp.o	71fa0c2a289f2915
+9	526	1693378540	CMakeFiles/native-lib.dir/src/main/jni/benchmark/BenchMarkMain.cpp.o	9db38946dc50317b
+9	818	1693378540	CMakeFiles/native-lib.dir/src/main/jni/MemObj.cpp.o	ee6ffcc7f75ea608
+818	920	1693378540	../../../../build/intermediates/cxx/Debug/1j7048z2/obj/arm64-v8a/libnative-lib.so	a22242005027776
+2	248	1693378831	../../../../build/intermediates/cxx/Debug/1j7048z2/obj/arm64-v8a/libnative-lib.so	a22242005027776
+1	194	1693378995	../../../../build/intermediates/cxx/Debug/1j7048z2/obj/arm64-v8a/libnative-lib.so	a22242005027776
+1	194	1693379072	../../../../build/intermediates/cxx/Debug/1j7048z2/obj/arm64-v8a/libnative-lib.so	a22242005027776
